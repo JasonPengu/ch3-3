@@ -11,3 +11,13 @@ mvn spring-boot:run -Dspring.profiles.active=zone4
 	2个zuul
 mvn spring-boot:run -Dspring.profiles.active=zone1
 mvn spring-boot:run -Dspring.profiles.active=zone3-region-west
+
+所有服务启动后
+访问http://localhost:10001/eureka-client/actuator/env   会显示zone1实例
+访问http://localhost:10002/eureka-client/actuator/env   会显示zone3实例
+==
+停掉 client1/client2后
+访问http://localhost:10001/eureka-client/actuator/env   会显示zone3/zone4实例
+==
+停掉 client3/client4后
+访问http://localhost:10002/eureka-client/actuator/env   会显示zone1/zone1实例
