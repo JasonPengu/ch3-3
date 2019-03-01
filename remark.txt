@@ -1,0 +1,13 @@
+  4个eureka-server
+mvn spring-boot:run -Dspring.profiles.active=zone1
+mvn spring-boot:run -Dspring.profiles.active=zone2
+mvn spring-boot:run -Dspring.profiles.active=zone3-region-west
+mvn spring-boot:run -Dspring.profiles.active=zone4-region-west
+  4个eureka-client
+mvn spring-boot:run -Dspring.profiles.active=zone1
+mvn spring-boot:run -Dspring.profiles.active=zone2
+mvn spring-boot:run -Dspring.profiles.active=zone3
+mvn spring-boot:run -Dspring.profiles.active=zone4
+	2个zuul
+mvn spring-boot:run -Dspring.profiles.active=zone1
+mvn spring-boot:run -Dspring.profiles.active=zone3-region-west
